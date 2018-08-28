@@ -4,6 +4,11 @@ Auditing is keeping a record of all changes occurred to the database. For exampl
 This example project, logs all changes occur by adding annotation `Auditable` to `BaseEntity` which is the superclass of all of our entities. If you don't know what I am saying, no problem I'll go explain through it step by step.
 
 
+### Project Dependences
+* A JPA Framework (Hibernate in this example)
+* [Gson Jar](https://google.github.io/gson/apidocs/com/google/gson/Gson.html) (To convert the object to JSON to log it)
+
+
 ### Audit Structure (Main Files)
 `com.karim.examples.java.audit.dal.orm.audit` contains two ORMs for audit table.
 
@@ -13,23 +18,23 @@ This example project, logs all changes occur by adding annotation `Auditable` to
 
 
 ### Audit Constraints
-* @Table annotation must be defined on entity class.
-* @Id, @Column, and @Transient annotations must be used on getter method (not on the property).
+* `@Table` annotation must be defined on entity class.
+* `@Id`, `@Column`, and `@Transient` annotations must be used on getter method (not on the property).
 * Entities must follow [JavaBean Naming Conventions](https://docstore.mik.ua/orelly/java-ent/jnut/ch06_02.htm).
 
 
 ### Audit Usage Examples
 * Audit All Entities Operations (As in our example)
-  * Add @Auditable to BaseEntity.
+  * Add `@Auditable` to BaseEntity.
 * Audit All Entities Except some entities
-  * Add @Auditable to BaseEntity.
-  * Add @Auditable(enabled=false) to the entities that you want to exclude.
+  * Add `@Auditable` to BaseEntity.
+  * Add `@Auditable(enabled=false)` to the entities that you want to exclude.
 * Audit some entities only (you can follow one of below ways):
   * Not Many entities to be audited
-    * Mark only entities to be audited with @Auditable
+    * Mark only entities to be audited with `@Auditable`.
   * Many entities to be audited
-    * Add @Auditable(enabled=false) to BaseEntity.
-    * Mark only entities to be audited with @Auditable
+    * Add `@Auditable(enabled=false)` to BaseEntity.
+    * Mark only entities to be audited with `@Auditable`.
 * Audit some attributes in an entity
-  * Add @Auditable to entity.
-  * Add @Auditable(enabled=false) to the attribute to be execluded from audit
+  * Add `@Auditable` to entity.
+  * Add `@Auditable(enabled=false)` to the attribute to be execluded from audit.
