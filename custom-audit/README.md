@@ -1,10 +1,10 @@
-# Custom Audit
+# Custom Audit Project
 Auditing is keeping a record of all changes occurred to the database. For example, if a user updates a record in any table, a record should be added automatically to the auditing log explain who made the changes, what the changes were, and when it occurs. For some systems, this is an absolute requirement.
 
 This example project, logs all changes occur by adding annotation `Auditable` to `BaseEntity` which is the superclass of all of our entities. If you don't know what I am saying, no problem I'll go explain through it step by step.
 
 
-### Project Dependences
+### Audit Dependences
 * A JPA Framework (Hibernate in this example)
 * [Gson Jar](https://google.github.io/gson/apidocs/com/google/gson/Gson.html) (To convert the object to JSON to log it)
 
