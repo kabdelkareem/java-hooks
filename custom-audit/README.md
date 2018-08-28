@@ -25,15 +25,15 @@ This example project, logs all changes occur by adding annotation `Auditable` to
 
 ### Audit Usage Examples
 * Audit All Entities Operations (As in our example)
-  * Add `@Auditable` to BaseEntity.
+  * Add `@Auditable` to `BaseEntity`.
 * Audit All Entities Except some entities
-  * Add `@Auditable` to BaseEntity.
+  * Add `@Auditable` to `BaseEntity`.
   * Add `@Auditable(enabled=false)` to the entities that you want to exclude.
 * Audit some entities only (you can follow one of below ways):
   * Not Many entities to be audited
     * Mark only entities to be audited with `@Auditable`.
   * Many entities to be audited
-    * Add `@Auditable(enabled=false)` to BaseEntity.
+    * Add `@Auditable(enabled=false)` to `BaseEntity`.
     * Mark only entities to be audited with `@Auditable`.
 * Audit some attributes in an entity
   * Add `@Auditable` to entity.
