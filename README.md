@@ -1,2 +1,2 @@
 # java-hooks
-Contains some java hooks code
+Contains some java hooks projects
